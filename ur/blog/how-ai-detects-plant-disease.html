@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html lang="ur" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>اے آئی تصویر سے پودے کی بیماری کیسے پہچانتی ہے | AgriHealth AI</title>
+  <meta name="description" content="AgriHealth AI کے پیچھے مشین لرننگ کو آسان زبان میں سمجھیں: ماڈل کیسے سیکھتے ہیں، انہیں کتنا یقین ہوتا ہے، اور وہ کہاں غلطی کر سکتے ہیں۔">
+  <meta name="theme-color" content="#0b3b2c">
+  <link rel="canonical" href="https://www.yourdomain.com/ur/blog/how-ai-detects-plant-disease.html">
+  <link rel="alternate" hreflang="en" href="https://www.yourdomain.com/blog/how-ai-detects-plant-disease.html">
+  <link rel="alternate" hreflang="ur" href="https://www.yourdomain.com/ur/blog/how-ai-detects-plant-disease.html">
+  <link rel="alternate" hreflang="x-default" href="https://www.yourdomain.com/blog/how-ai-detects-plant-disease.html">
+
+  <!-- Social sharing preview -->
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="AgriHealth AI">
+  <meta property="og:locale" content="ur_PK">
+  <meta property="og:title" content="اے آئی تصویر سے پودے کی بیماری کیسے پہچانتی ہے | AgriHealth AI">
+  <meta property="og:description" content="AgriHealth AI کے پیچھے مشین لرننگ کو آسان زبان میں سمجھیں: ماڈل کیسے سیکھتے ہیں، انہیں کتنا یقین ہوتا ہے، اور وہ کہاں غلطی کر سکتے ہیں۔">
+  <meta property="og:image" content="https://images.unsplash.com/photo-1642439994493-3816a23c997a?auto=format&fit=crop&w=1200&q=75">
+
+  <!-- Icons & app -->
+  <link rel="icon" href="../../images/favicon.svg" type="image/svg+xml">
+  <link rel="icon" href="../../images/icon-192.png" type="image/png" sizes="192x192">
+  <link rel="apple-touch-icon" href="../../images/icon-192.png">
+  <link rel="manifest" href="../../site.webmanifest">
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Nastaliq+Urdu:wght@400..700&display=swap" rel="stylesheet">
+
+  <!-- CSS -->
+  <link rel="stylesheet" href="../../css/style.css">
+</head>
+<body>
+  <a href="#main" class="skip-link">مواد پر جائیں</a>
+
+  <!-- ================= HEADER ================= -->
+  <header class="header">
+    <div class="header-container">
+      <a href="../index.html" class="logo" aria-label="AgriHealth AI ہوم"><span class="logo-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 21c0-9 5-15 15-16-1 10-7 15-15 16z"></path><path d="M5 21l8-8"></path></svg></span><span class="logo-text" dir="ltr">AgriHealth <span class="logo-highlight">AI</span></span></a>
+
+      <nav class="nav-menu" aria-label="مین مینو">
+        <a href="../index.html" class="nav-link">ہوم</a>
+        <a href="../plants.html" class="nav-link">فصلیں</a>
+        <a href="../blog.html" class="nav-link active" aria-current="page">بلاگ</a>
+        <a href="../about.html" class="nav-link">ہمارے بارے میں</a>
+        <a href="../contact.html" class="nav-link">رابطہ</a>
+      </nav>
+
+      <div class="header-actions">
+        <a href="../../blog/how-ai-detects-plant-disease.html" class="lang-btn" lang="en" hreflang="en">English</a>
+        <button type="button" class="icon-btn search-btn" aria-label="تلاش کھولیں" aria-expanded="false" aria-controls="search-box"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="11" cy="11" r="7"></circle><path d="M20 20l-3.5-3.5"></path></svg></button>
+        <a href="../detect.html" class="detect-btn">بیماری چیک کریں</a>
+        <button type="button" class="icon-btn menu-btn" aria-label="مینو کھولیں" aria-expanded="false" aria-controls="mobile-menu"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 7h16M4 12h16M4 17h16"></path></svg></button>
+      </div>
+    </div>
+
+    <!-- Search box -->
+    <div class="search-box" id="search-box">
+      <form class="search-form" action="../blog.html" method="get" role="search">
+        <label for="search-input" class="visually-hidden">بیماریاں اور مضامین تلاش کریں</label>
+        <input type="search" id="search-input" name="q" class="search-input" placeholder="بیماری یا فصل تلاش کریں… مثلاً کنگی، سفید مکھی">
+        <button type="submit" class="search-submit">تلاش</button>
+      </form>
+    </div>
+  </header>
+
+  <!-- ================= MOBILE MENU ================= -->
+  <div class="menu-overlay"></div>
+  <aside class="mobile-menu" id="mobile-menu" aria-label="موبائل مینو">
+    <div class="mobile-menu-top">
+      <a href="../index.html" class="logo logo-white" aria-label="AgriHealth AI ہوم"><span class="logo-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 21c0-9 5-15 15-16-1 10-7 15-15 16z"></path><path d="M5 21l8-8"></path></svg></span><span class="logo-text" dir="ltr">AgriHealth <span class="logo-highlight">AI</span></span></a>
+      <button type="button" class="icon-btn close-btn" aria-label="مینو بند کریں"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 6l12 12M18 6L6 18"></path></svg></button>
+    </div>
+    <nav class="mobile-nav" aria-label="موبائل مین مینو">
+      <a href="../index.html" class="mobile-link"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 11l9-7 9 7v9a1 1 0 0 1-1 1h-5v-6h-6v6H4a1 1 0 0 1-1-1z"></path></svg>ہوم</a>
+      <a href="../plants.html" class="mobile-link"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 21c0-9 5-15 15-16-1 10-7 15-15 16z"></path><path d="M5 21l8-8"></path></svg>فصلیں</a>
+      <a href="../blog.html" class="mobile-link active"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 5a2 2 0 0 1 2-2h12v18H6a2 2 0 0 1-2-2z"></path><path d="M8 7h6M8 11h6"></path></svg>بلاگ</a>
+      <a href="../about.html" class="mobile-link"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"></circle><path d="M12 11v6M12 7.5v.01"></path></svg>ہمارے بارے میں</a>
+      <a href="../contact.html" class="mobile-link"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="2"></rect><path d="M3 7l9 6 9-6"></path></svg>رابطہ</a>
+    </nav>
+    <div class="mobile-actions">
+      <p class="mobile-actions-title">فوری کام</p>
+      <a href="../detect.html" class="mobile-btn mobile-btn-fill">بیماری چیک کریں</a>
+      <a href="../blog.html" class="mobile-btn mobile-btn-outline">بلاگ دیکھیں</a>
+      <a href="../../blog/how-ai-detects-plant-disease.html" class="lang-btn mobile-lang" lang="en" hreflang="en">English</a>
+    </div>
+    <p class="mobile-copy">© 2026 AgriHealth AI</p>
+  </aside>
+
+  <main id="main">
+
+    <!-- ================= SECTION 1: ARTICLE HEADER ================= -->
+    <section class="container-1">
+      <div class="article-header">
+        <ol class="breadcrumb breadcrumb-dark" aria-label="راستہ"><li><a href="../index.html">ہوم</a></li><li><a href="../blog.html">بلاگ</a></li><li aria-current="page">مشورے</li></ol>
+        <span class="tag tag-gray">مشورے</span>
+        <h1 class="article-title">اے آئی تصویر سے پودے کی بیماری کیسے پہچانتی ہے</h1>
+        <p class="article-meta">AgriHealth AI ٹیم · <time datetime="2026-09-16">16 ستمبر 2026</time> · 7 منٹ کا مطالعہ</p>
+      </div>
+      <img src="https://images.unsplash.com/photo-1642439994493-3816a23c997a?auto=format&fit=crop&w=1800&q=75" srcset="https://images.unsplash.com/photo-1642439994493-3816a23c997a?auto=format&fit=crop&w=480&q=75 480w, https://images.unsplash.com/photo-1642439994493-3816a23c997a?auto=format&fit=crop&w=800&q=75 800w, https://images.unsplash.com/photo-1642439994493-3816a23c997a?auto=format&fit=crop&w=1200&q=75 1200w, https://images.unsplash.com/photo-1642439994493-3816a23c997a?auto=format&fit=crop&w=1800&q=75 1800w" sizes="(max-width: 1100px) 100vw, 1100px" alt="کھیت میں فون دیکھتا ہوا آدمی" class="article-hero-image" width="1600" height="900" fetchpriority="high" decoding="async">
+    </section>
+
+    <!-- ================= SECTION 2: ARTICLE ================= -->
+    <section class="container-2 section">
+      <div class="article-layout">
+        <article class="article-body">
+<p>پتے کی تصویر دیکھ کر بیماری کا نام بتانے والے اے آئی ٹول جادو جیسے لگتے ہیں۔ اصل میں یہ مشین لرننگ کے چند جانے پہچانے طریقوں سے بنتے ہیں۔ یہاں آسان زبان میں بتایا گیا ہے کہ AgriHealth AI کے ماڈل کیسے کام کرتے ہیں۔ تصویر والا ماڈل چالو ہے، اور ہم اسے جانچتے اور بہتر کرتے رہتے ہیں۔</p>
+
+<h2 id="1">1. مثالوں سے سیکھنا</h2>
+<p>تصویر والا ماڈل ایک قسم کا نیورل نیٹ ورک ہے جسے کنوولوشنل نیورل نیٹ ورک (CNN) کہتے ہیں۔ یہ ہزاروں ایسی تصویریں دیکھ کر سیکھتا ہے جن پر بیماری کا نام لکھا ہو۔ مثلاً اگیتے جھلساؤ والے بہت سے پتے، پچھیتے جھلساؤ والے بہت سے پتے، اور بہت سے صحت مند پتے۔ آہستہ آہستہ یہ سیکھ جاتا ہے کہ کون سا رنگ، بناوٹ اور شکل کس بیماری کی ہے۔</p>
+<p>ہم بالکل شروع سے نہیں سکھاتے۔ ہم <strong>ٹرانسفر لرننگ</strong> استعمال کرتے ہیں: ایک ایسا ماڈل لیتے ہیں جو لاکھوں عام تصویروں سے شکلیں اور بناوٹ پہچاننا پہلے ہی سیکھ چکا ہے، اور پھر اسے پودوں کی بیماریوں کی تصویروں پر مزید سکھاتے ہیں۔ اس طرح بہت کم تصویروں کی ضرورت پڑتی ہے اور نتیجہ بہتر آتا ہے۔</p>
+
+<h2 id="2">2. لیبارٹری کی تصویریں اور اصل کھیت</h2>
+<p>پودوں کی بیماریوں کی بہت سی عام دستیاب تصویریں لیبارٹری میں لی گئی ہیں، جن میں سادہ پس منظر پر ایک ہی پتہ ہوتا ہے۔ کھیت کی اصل تصویریں ایسی صاف نہیں ہوتیں: روشنی الگ ہوتی ہے، کئی پتے ہوتے ہیں، اور مٹی اور ہاتھ بھی تصویر میں آ جاتے ہیں۔ جو ماڈل صرف لیبارٹری کی تصویروں پر سیکھے، وہ جانچ میں بہت درست لگ سکتا ہے لیکن اصل کھیت میں کمزور کام کرتا ہے۔ اسی لیے ہم کھیت کی تصویروں پر بھی سکھاتے اور جانچتے ہیں۔ جانچ کے نتائج ہمارے <a href="../about.html#technology">ہمارے بارے میں صفحے</a> پر موجود ہیں۔</p>
+
+<h2 id="3">3. "کیا یہ پتہ ہے بھی؟"</h2>
+<p>جو ماڈل صرف بیماریوں پر سیکھا ہو، وہ ہمیشہ کسی نہ کسی بیماری کا نام بتائے گا، چاہے تصویر چائے کے کپ کی ہو۔ اس لیے بیماری کا نام بتانے سے پہلے ایک الگ جانچ یہ دیکھتی ہے کہ تصویر میں پودا ہے بھی یا نہیں۔ اگر نہیں ہے، تو ہم اندازہ لگانے کی بجائے آپ سے بہتر تصویر مانگتے ہیں۔</p>
+
+<h2 id="4">4. یہ دکھانا کہ اے آئی نے کہاں دیکھا</h2>
+<p>ہم <strong>Grad-CAM</strong> نام کا طریقہ استعمال کرتے ہیں جو آپ کی تصویر پر رنگین نقشہ (ہیٹ میپ) بناتا ہے۔ یہ پتے کے وہ حصے نمایاں کرتا ہے جن کی وجہ سے ماڈل نے جواب دیا۔ اگر رنگین حصہ داغوں پر ہو تو یہ اچھی نشانی ہے۔ اگر یہ پس منظر پر ہو تو جواب پر کم بھروسہ کریں۔</p>
+
+<h2 id="5">5. لکھی ہوئی نشانیاں سمجھنا</h2>
+<p>جب آپ اپنے الفاظ میں مسئلہ لکھتے ہیں، تو ایک زبان والا ماڈل آپ کے جملے کو ایسے نمبروں میں بدل دیتا ہے جو اس کا مطلب بتاتے ہیں (انہیں <strong>ایمبیڈنگز</strong> کہتے ہیں)۔ پھر ان کا مقابلہ ہماری بیماریوں کی لائبریری کی نشانیوں سے کیا جاتا ہے تاکہ سب سے ملتی جلتی بیماریاں مل سکیں۔ اگر دو بیماریاں بہت ملتی جلتی ہوں، تو سسٹم آپ سے ایک اور سوال پوچھتا ہے جس سے ان میں فرق سب سے اچھی طرح پتہ چلے۔</p>
+
+<h2 id="6">6. یقین کا نمبر پکی بات نہیں</h2>
+<p>ہر نتیجے کے ساتھ یقین کا ایک نمبر آتا ہے، جیسے 82%۔ یہ بتاتا ہے کہ ماڈل کو کتنا یقین ہے، یہ کوئی گارنٹی نہیں۔ ملتی جلتی بیماریاں، خراب تصویریں اور کم ملنے والے مسئلے، سب غلطی کی وجہ بن سکتے ہیں۔ اسی لیے ہم ہمیشہ دوسری ممکنہ بیماریاں بھی دکھاتے ہیں اور بتاتے ہیں کہ کب زراعت افسر سے رابطہ کرنا ہے۔</p>
+
+<h2 id="section-7">خود آزمائیں</h2>
+<p>پہلے ہمارے <a href="../blog/take-a-good-photo-for-ai.html">تصویر لینے کے مشورے</a> پڑھیں، پھر <a href="../detect.html">جانچ والے صفحے</a> پر جائیں۔</p>
+          <div class="article-note">
+            <div class="notice notice-green">
+        <span class="notice-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"></circle><path d="M12 11v6M12 7.5v.01"></path></svg></span>
+        <p class="notice-text">یہ مضمون عام معلومات کے لیے ہے، زرعی ماہر کا مشورہ نہیں۔ پھیلتی ہوئی فصل کی بیماری کے لیے اپنے مقامی زراعت افسر سے رابطہ کریں۔</p>
+      </div>
+          </div>
+        </article>
+
+        <aside class="article-aside" aria-label="مضمون کے اوزار">
+          <nav class="aside-card" aria-label="اس صفحے پر">
+            <h2 class="aside-title">اس صفحے پر</h2>
+            <ol class="toc-list"><li><a href="#1">1. مثالوں سے سیکھنا</a></li><li><a href="#2">2. لیبارٹری کی تصویریں اور اصل کھیت</a></li><li><a href="#3">3. &quot;کیا یہ پتہ ہے بھی؟&quot;</a></li><li><a href="#4">4. یہ دکھانا کہ اے آئی نے کہاں دیکھا</a></li><li><a href="#5">5. لکھی ہوئی نشانیاں سمجھنا</a></li><li><a href="#6">6. یقین کا نمبر پکی بات نہیں</a></li><li><a href="#section-7">خود آزمائیں</a></li></ol>
+          </nav>
+          <div class="aside-cta">
+            <h2 class="aside-title">اے آئی سے چیک کریں</h2>
+            <p>تصویر یا علامات کی تفصیل سے مفت پہلی رائے لیں۔</p>
+            <a href="../detect.html?type=plant" class="btn btn-green btn-full">بیماری چیک کریں</a>
+          </div>
+        </aside>
+      </div>
+    </section>
+
+    <!-- ================= SECTION 3: RELATED ARTICLES ================= -->
+    <section class="container-3 section reveal">
+      <div class="section-head section-head-row">
+        <div>
+          <p class="section-label">مزید پڑھیں</p>
+          <h2 class="section-title">متعلقہ مضامین</h2>
+        </div>
+        <a href="../blog.html" class="link-arrow">سب مضامین <svg class="icon-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"></path></svg></a>
+      </div>
+      <div class="card-grid">
+        <a href="../blog/take-a-good-photo-for-ai.html" class="guide-card" data-tags="tips" data-search="ایسی تصویر کیسے لیں جو اے آئی پڑھ سکے دن کی روشنی میں قریب سے لی گئی صاف تصویر سے نتیجہ بہت بہتر آتا ہے۔ تصویر اپ لوڈ کرنے سے پہلے یہ آسان مشورے دیکھیں۔">
+          <img src="https://images.unsplash.com/photo-1586819158505-d7f6227d19d4?auto=format&fit=crop&w=800&q=75" srcset="https://images.unsplash.com/photo-1586819158505-d7f6227d19d4?auto=format&fit=crop&w=480&q=75 480w, https://images.unsplash.com/photo-1586819158505-d7f6227d19d4?auto=format&fit=crop&w=800&q=75 800w" sizes="(max-width: 600px) 100vw, 400px" alt="" class="guide-image" width="800" height="500" loading="lazy" decoding="async">
+          <div class="guide-body">
+            <span class="tag tag-gray">مشورے</span>
+            <h3 class="guide-title">ایسی تصویر کیسے لیں جو اے آئی پڑھ سکے</h3>
+            <p class="guide-excerpt">دن کی روشنی میں قریب سے لی گئی صاف تصویر سے نتیجہ بہت بہتر آتا ہے۔ تصویر اپ لوڈ کرنے سے پہلے یہ آسان مشورے دیکھیں۔</p>
+            <p class="guide-meta">27 ستمبر 2026 · 4 منٹ کا مطالعہ</p>
+          </div>
+        </a>        <a href="../blog/check-crop-leaves-for-disease.html" class="guide-card" data-tags="plants" data-search="فصل کے پتوں میں بیماری کی ابتدائی نشانیاں کیسے دیکھیں ہر ہفتے کھیت دیکھنے کا آسان طریقہ، پتوں پر کیا دیکھنا ہے، اور بیماری کو کھاد یا پانی کی کمی سے کیسے الگ پہچانیں۔">
+          <img src="https://images.unsplash.com/photo-1633410195091-bd66114cef5f?auto=format&fit=crop&w=800&q=75" srcset="https://images.unsplash.com/photo-1633410195091-bd66114cef5f?auto=format&fit=crop&w=480&q=75 480w, https://images.unsplash.com/photo-1633410195091-bd66114cef5f?auto=format&fit=crop&w=800&q=75 800w" sizes="(max-width: 600px) 100vw, 400px" alt="" class="guide-image" width="800" height="500" loading="lazy" decoding="async">
+          <div class="guide-body">
+            <span class="tag">فصلیں</span>
+            <h3 class="guide-title">فصل کے پتوں میں بیماری کی ابتدائی نشانیاں کیسے دیکھیں</h3>
+            <p class="guide-excerpt">ہر ہفتے کھیت دیکھنے کا آسان طریقہ، پتوں پر کیا دیکھنا ہے، اور بیماری کو کھاد یا پانی کی کمی سے کیسے الگ پہچانیں۔</p>
+            <p class="guide-meta">5 اکتوبر 2026 · 6 منٹ کا مطالعہ</p>
+          </div>
+        </a>        <a href="../blog/fungal-bacterial-viral-plant-diseases.html" class="guide-card" data-tags="plants" data-search="فنگس، بیکٹیریا یا وائرس؟ پودوں کی بیماریوں میں فرق پہچانیں ہر وجہ کا علاج الگ ہوتا ہے۔ فنگس، بیکٹیریا اور وائرس والی بیماریوں کی عام نشانیاں جانیں، اور یہ کہ وجہ جاننا کیوں ضروری ہے۔">
+          <img src="https://images.unsplash.com/photo-1609769274404-a603c8e97b68?auto=format&fit=crop&w=800&q=75" srcset="https://images.unsplash.com/photo-1609769274404-a603c8e97b68?auto=format&fit=crop&w=480&q=75 480w, https://images.unsplash.com/photo-1609769274404-a603c8e97b68?auto=format&fit=crop&w=800&q=75 800w" sizes="(max-width: 600px) 100vw, 400px" alt="" class="guide-image" width="800" height="500" loading="lazy" decoding="async">
+          <div class="guide-body">
+            <span class="tag">فصلیں</span>
+            <h3 class="guide-title">فنگس، بیکٹیریا یا وائرس؟ پودوں کی بیماریوں میں فرق پہچانیں</h3>
+            <p class="guide-excerpt">ہر وجہ کا علاج الگ ہوتا ہے۔ فنگس، بیکٹیریا اور وائرس والی بیماریوں کی عام نشانیاں جانیں، اور یہ کہ وجہ جاننا کیوں ضروری ہے۔</p>
+            <p class="guide-meta">24 ستمبر 2026 · 6 منٹ کا مطالعہ</p>
+          </div>
+        </a>
+      </div>
+    </section>
+  </main>
+
+  <!-- ================= FOOTER ================= -->
+  <footer class="footer">
+    <div class="footer-container">
+      <div class="footer-brand">
+        <a href="../index.html" class="logo logo-white" aria-label="AgriHealth AI ہوم"><span class="logo-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 21c0-9 5-15 15-16-1 10-7 15-15 16z"></path><path d="M5 21l8-8"></path></svg></span><span class="logo-text" dir="ltr">AgriHealth <span class="logo-highlight">AI</span></span></a>
+        <p class="footer-about">پودوں کی بیماریاں جلدی پہچاننے کے لیے مفت اے آئی مدد، تاکہ فصلیں اور باغ صحت مند رہیں اور پیداوار بڑھے۔</p>
+      </div>
+
+      <div class="footer-links">
+        <div class="footer-col">
+          <h2 class="footer-title">اہم لنکس</h2>
+          <a href="../index.html">ہوم</a>
+          <a href="../plants.html">فصلوں کی بیماریاں</a>
+          <a href="../blog/take-a-good-photo-for-ai.html">تصویر لینے کی ٹپس</a>
+          <a href="../detect.html">بیماری چیک کریں</a>
+        </div>
+        <div class="footer-col">
+          <h2 class="footer-title">معلومات</h2>
+          <a href="../blog.html">بلاگ اور رہنمائی</a>
+          <a href="../about.html#technology">ہماری اے آئی کیسے کام کرتی ہے</a>
+          <a href="../about.html">ہمارے بارے میں</a>
+          <a href="../contact.html">رابطہ</a>
+        </div>
+        <div class="footer-col">
+          <h2 class="footer-title">قانونی</h2>
+          <a href="../privacy.html">پرائیویسی پالیسی</a>
+          <a href="../terms.html">شرائط اور اعلانِ دستبرداری</a>
+          <a href="../about.html#credits">تصویروں کا کریڈٹ</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="footer-bottom">
+      <p>© 2026 AgriHealth AI۔ جملہ حقوق محفوظ ہیں۔</p>
+      <p>اے آئی کے نتائج صرف مشورہ ہیں، ویٹرنری ڈاکٹر یا زرعی ماہر کا متبادل نہیں۔</p>
+    </div>
+  </footer>
+
+  <script src="../../js/main.js"></script>
+</body>
+</html>

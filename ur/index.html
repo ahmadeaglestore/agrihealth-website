@@ -1,0 +1,372 @@
+<!DOCTYPE html>
+<html lang="ur" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>AgriHealth AI – فصلوں اور پودوں کی بیماری کی پہچان</title>
+  <meta name="description" content="مفت اے آئی ٹول جو فصلوں اور پودوں کی بیماریاں جلدی پہچاننے میں مدد کرتا ہے۔ پتے کی تصویر بھیجیں یا علامات بتائیں اور ممکنہ وجہ اور اگلے قدم جانیں۔">
+  <meta name="theme-color" content="#0b3b2c">
+  <link rel="canonical" href="https://www.yourdomain.com/ur/">
+  <link rel="alternate" hreflang="en" href="https://www.yourdomain.com/">
+  <link rel="alternate" hreflang="ur" href="https://www.yourdomain.com/ur/">
+  <link rel="alternate" hreflang="x-default" href="https://www.yourdomain.com/">
+
+  <!-- Social sharing preview -->
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="AgriHealth AI">
+  <meta property="og:locale" content="ur_PK">
+  <meta property="og:title" content="AgriHealth AI – فصلوں اور پودوں کی بیماری کی پہچان">
+  <meta property="og:description" content="مفت اے آئی ٹول جو فصلوں اور پودوں کی بیماریاں جلدی پہچاننے میں مدد کرتا ہے۔ پتے کی تصویر بھیجیں یا علامات بتائیں اور ممکنہ وجہ اور اگلے قدم جانیں۔">
+  <meta property="og:image" content="https://images.unsplash.com/photo-1466692476868-aef1dfb1e735?auto=format&fit=crop&w=1200&q=75">
+
+  <!-- Icons & app -->
+  <link rel="icon" href="../images/favicon.svg" type="image/svg+xml">
+  <link rel="icon" href="../images/icon-192.png" type="image/png" sizes="192x192">
+  <link rel="apple-touch-icon" href="../images/icon-192.png">
+  <link rel="manifest" href="../site.webmanifest">
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Nastaliq+Urdu:wght@400..700&display=swap" rel="stylesheet">
+
+  <!-- CSS -->
+  <link rel="stylesheet" href="../css/style.css">
+</head>
+<body>
+  <a href="#main" class="skip-link">مواد پر جائیں</a>
+
+  <!-- ================= HEADER ================= -->
+  <header class="header">
+    <div class="header-container">
+      <a href="index.html" class="logo" aria-label="AgriHealth AI ہوم"><span class="logo-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 21c0-9 5-15 15-16-1 10-7 15-15 16z"></path><path d="M5 21l8-8"></path></svg></span><span class="logo-text" dir="ltr">AgriHealth <span class="logo-highlight">AI</span></span></a>
+
+      <nav class="nav-menu" aria-label="مین مینو">
+        <a href="index.html" class="nav-link active" aria-current="page">ہوم</a>
+        <a href="plants.html" class="nav-link">فصلیں</a>
+        <a href="blog.html" class="nav-link">بلاگ</a>
+        <a href="about.html" class="nav-link">ہمارے بارے میں</a>
+        <a href="contact.html" class="nav-link">رابطہ</a>
+      </nav>
+
+      <div class="header-actions">
+        <a href="../index.html" class="lang-btn" lang="en" hreflang="en">English</a>
+        <button type="button" class="icon-btn search-btn" aria-label="تلاش کھولیں" aria-expanded="false" aria-controls="search-box"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="11" cy="11" r="7"></circle><path d="M20 20l-3.5-3.5"></path></svg></button>
+        <a href="detect.html" class="detect-btn">بیماری چیک کریں</a>
+        <button type="button" class="icon-btn menu-btn" aria-label="مینو کھولیں" aria-expanded="false" aria-controls="mobile-menu"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 7h16M4 12h16M4 17h16"></path></svg></button>
+      </div>
+    </div>
+
+    <!-- Search box -->
+    <div class="search-box" id="search-box">
+      <form class="search-form" action="blog.html" method="get" role="search">
+        <label for="search-input" class="visually-hidden">بیماریاں اور مضامین تلاش کریں</label>
+        <input type="search" id="search-input" name="q" class="search-input" placeholder="بیماری یا فصل تلاش کریں… مثلاً کنگی، سفید مکھی">
+        <button type="submit" class="search-submit">تلاش</button>
+      </form>
+    </div>
+  </header>
+
+  <!-- ================= MOBILE MENU ================= -->
+  <div class="menu-overlay"></div>
+  <aside class="mobile-menu" id="mobile-menu" aria-label="موبائل مینو">
+    <div class="mobile-menu-top">
+      <a href="index.html" class="logo logo-white" aria-label="AgriHealth AI ہوم"><span class="logo-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 21c0-9 5-15 15-16-1 10-7 15-15 16z"></path><path d="M5 21l8-8"></path></svg></span><span class="logo-text" dir="ltr">AgriHealth <span class="logo-highlight">AI</span></span></a>
+      <button type="button" class="icon-btn close-btn" aria-label="مینو بند کریں"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 6l12 12M18 6L6 18"></path></svg></button>
+    </div>
+    <nav class="mobile-nav" aria-label="موبائل مین مینو">
+      <a href="index.html" class="mobile-link active"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 11l9-7 9 7v9a1 1 0 0 1-1 1h-5v-6h-6v6H4a1 1 0 0 1-1-1z"></path></svg>ہوم</a>
+      <a href="plants.html" class="mobile-link"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 21c0-9 5-15 15-16-1 10-7 15-15 16z"></path><path d="M5 21l8-8"></path></svg>فصلیں</a>
+      <a href="blog.html" class="mobile-link"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 5a2 2 0 0 1 2-2h12v18H6a2 2 0 0 1-2-2z"></path><path d="M8 7h6M8 11h6"></path></svg>بلاگ</a>
+      <a href="about.html" class="mobile-link"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"></circle><path d="M12 11v6M12 7.5v.01"></path></svg>ہمارے بارے میں</a>
+      <a href="contact.html" class="mobile-link"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="2"></rect><path d="M3 7l9 6 9-6"></path></svg>رابطہ</a>
+    </nav>
+    <div class="mobile-actions">
+      <p class="mobile-actions-title">فوری کام</p>
+      <a href="detect.html" class="mobile-btn mobile-btn-fill">بیماری چیک کریں</a>
+      <a href="blog.html" class="mobile-btn mobile-btn-outline">بلاگ دیکھیں</a>
+      <a href="../index.html" class="lang-btn mobile-lang" lang="en" hreflang="en">English</a>
+    </div>
+    <p class="mobile-copy">© 2026 AgriHealth AI</p>
+  </aside>
+
+  <main id="main">
+
+    <!-- ================= SECTION 1: HERO ================= -->
+    <section class="container-1 home-hero">
+      <img src="https://images.unsplash.com/photo-1466692476868-aef1dfb1e735?auto=format&fit=crop&w=1800&q=75" srcset="https://images.unsplash.com/photo-1466692476868-aef1dfb1e735?auto=format&fit=crop&w=480&q=75 480w, https://images.unsplash.com/photo-1466692476868-aef1dfb1e735?auto=format&fit=crop&w=800&q=75 800w, https://images.unsplash.com/photo-1466692476868-aef1dfb1e735?auto=format&fit=crop&w=1200&q=75 1200w, https://images.unsplash.com/photo-1466692476868-aef1dfb1e735?auto=format&fit=crop&w=1800&q=75 1800w" sizes="100vw" alt="مٹی میں اُگتے ہوئے ننھے سبز پودے" class="hero-image" width="1600" height="900" fetchpriority="high" decoding="async">
+      <div class="hero-inner">
+        <div class="hero-content">
+          <p class="hero-badge"><span class="hero-badge-dot"></span>اے آئی سے بیماری کی پہچان</p>
+          <h1 class="hero-title">صحت مند <span class="hero-title-green">فصلوں اور پودوں</span> کے لیے سمارٹ پہچان</h1>
+          <p class="hero-text">بیمار پتے کی تصویر بھیجیں یا علامات بتائیں۔ ہماری اے آئی فصلوں کی بیماریاں اور کیڑے جلدی پہچاننے میں مدد کرتی ہے، ممکنہ وجہ سمجھاتی ہے اور بتاتی ہے کہ اب کیا کرنا ہے۔</p>
+          <div class="hero-buttons">
+            <a href="detect.html" class="btn btn-green">بیماری چیک کریں <svg class="icon-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"></path></svg></a>
+            <a href="#how-it-works" class="btn btn-outline-white">مزید جانیں</a>
+          </div>
+          <ul class="hero-points">
+            <li>بالکل مفت</li><li>کوئی سائن اپ نہیں</li><li>تصویریں محفوظ نہیں کی جاتیں</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- ================= SECTION 2: FEATURES STRIP ================= -->
+    <section class="container-2 features-section" aria-label="اہم خوبیاں">
+      <div class="features-box">
+        <div class="feature-item">
+          <span class="feature-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="6" y="6" width="12" height="12" rx="2"></rect><path d="M9 2v4M15 2v4M9 18v4M15 18v4M2 9h4M2 15h4M18 9h4M18 15h4"></path></svg></span>
+          <div><h2 class="feature-title">اے آئی سے پہچان</h2><p class="feature-text">تصویر اور علامات، دونوں سے چیک</p></div>
+        </div>
+        <div class="feature-item">
+          <span class="feature-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"></circle><path d="M12 7v5l3 2"></path></svg></span>
+          <div><h2 class="feature-title">جلد پہچان</h2><p class="feature-text">بیماری پھیلنے سے پہلے پکڑیں</p></div>
+        </div>
+        <div class="feature-item">
+          <span class="feature-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 19h16"></path><path d="M6 15l4-4 3 3 5-6"></path><path d="M15 8h3v3"></path></svg></span>
+          <div><h2 class="feature-title">بہتر پیداوار</h2><p class="feature-text">اپنی فصل اور آمدنی بچائیں</p></div>
+        </div>
+        <div class="feature-item">
+          <span class="feature-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 21s-7-4.5-7-10a4 4 0 0 1 7-2.6A4 4 0 0 1 19 11c0 5.5-7 10-7 10z"></path></svg></span>
+          <div><h2 class="feature-title">صحت مند پودے</h2><p class="feature-text">فصلیں، سبزیاں اور پھل دار درخت</p></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ================= SECTION 3: CHOOSE A CATEGORY ================= -->
+    <section class="container-3 section category-section reveal">
+      <div class="section-head">
+        <p class="section-label">شروع کریں</p>
+        <h2 class="section-title">مدد کے دو طریقے</h2>
+        <p class="section-text">اپنی فصل کی بیماریوں کے بارے میں پڑھیں، یا ہماری اے آئی سے اپنا پودا چیک کروائیں۔ یہ صرف وہی بیماریاں دیکھتی ہے جو آپ کی چنی ہوئی فصل کو لگ سکتی ہیں۔</p>
+      </div>
+      <div class="category-grid">
+        <article class="category-card">
+          <div class="category-image-box">
+            <img src="https://images.unsplash.com/photo-1686278895718-26a2331d7297?auto=format&fit=crop&w=1200&q=75" srcset="https://images.unsplash.com/photo-1686278895718-26a2331d7297?auto=format&fit=crop&w=480&q=75 480w, https://images.unsplash.com/photo-1686278895718-26a2331d7297?auto=format&fit=crop&w=800&q=75 800w, https://images.unsplash.com/photo-1686278895718-26a2331d7297?auto=format&fit=crop&w=1200&q=75 1200w" sizes="(max-width: 960px) 100vw, 600px" alt="بیل پر لگے ٹماٹر" class="category-image" width="900" height="600" loading="lazy" decoding="async">
+            <span class="category-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 21c0-9 5-15 15-16-1 10-7 15-15 16z"></path><path d="M5 21l8-8"></path></svg></span>
+          </div>
+          <div class="category-body">
+            <h3 class="category-title">فصلوں کی بیماریاں</h3>
+            <p class="category-text">پتوں، تنوں اور پھلوں پر بیماریاں، کیڑے اور خوراکی کمی چیک کریں۔</p>
+            <ul class="category-tags"><li class="tag">گندم</li><li class="tag">چاول</li><li class="tag">کپاس</li><li class="tag">مکئی</li><li class="tag">گنا</li><li class="tag">آلو</li><li class="tag">ٹماٹر</li><li class="tag">پیاز</li><li class="tag tag-gray">+11 مزید</li></ul>
+            <a href="plants.html" class="btn btn-dark-green">فصلیں دیکھیں <svg class="icon-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"></path></svg></a>
+          </div>
+        </article>
+        <article class="category-card">
+          <div class="category-image-box">
+            <img src="https://images.unsplash.com/photo-1586819158505-d7f6227d19d4?auto=format&fit=crop&w=1200&q=75" srcset="https://images.unsplash.com/photo-1586819158505-d7f6227d19d4?auto=format&fit=crop&w=480&q=75 480w, https://images.unsplash.com/photo-1586819158505-d7f6227d19d4?auto=format&fit=crop&w=800&q=75 800w, https://images.unsplash.com/photo-1586819158505-d7f6227d19d4?auto=format&fit=crop&w=1200&q=75 1200w" sizes="(max-width: 960px) 100vw, 600px" alt="کھیت میں فون پکڑے ہوئے شخص" class="category-image" width="900" height="600" loading="lazy" decoding="async">
+            <span class="category-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 8h3l2-3h6l2 3h3v11H4z"></path><circle cx="12" cy="13" r="3.5"></circle></svg></span>
+          </div>
+          <div class="category-body">
+            <h3 class="category-title">اے آئی سے پودا چیک کریں</h3>
+            <p class="category-text">بیمار پتے کی تصویر بھیجیں یا جو نشانیاں نظر آئیں ان پر ٹیپ کریں۔ چند سیکنڈ میں سب سے ممکنہ وجہ اور اگلے قدم جانیں۔</p>
+            <ul class="category-tags"><li class="tag">📷 16 فصلیں تصویر سے</li><li class="tag">سب 19 فصلیں علامات سے</li><li class="tag">اردو اور English</li></ul>
+            <a href="detect.html" class="btn btn-dark-green">بیماری چیک کریں <svg class="icon-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"></path></svg></a>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <!-- ================= SECTION 4: HOW IT WORKS ================= -->
+    <section class="container-4 section how-section reveal" id="how-it-works">
+      <div class="section-head">
+        <p class="section-label">آسان طریقہ</p>
+        <h2 class="section-title">یہ کیسے کام کرتا ہے</h2>
+        <p class="section-text">ایک منٹ سے کم میں پہلی رائے۔ نہ اکاؤنٹ، نہ کوئی خرچ۔</p>
+      </div>
+      <div class="steps-grid">
+        <div class="step-card">
+          <span class="step-number">1</span>
+          <span class="step-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 8h3l2-3h6l2 3h3v11H4z"></path><circle cx="12" cy="13" r="3.5"></circle></svg></span>
+          <h3 class="step-title">تصویر یا تفصیل</h3>
+          <p class="step-text">بیمار پتے کی صاف تصویر لیں، یا اپنے الفاظ میں علامات لکھیں۔</p>
+        </div>
+        <div class="step-card">
+          <span class="step-number">2</span>
+          <span class="step-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="11" cy="11" r="7"></circle><path d="M20 20l-3.5-3.5"></path><path d="M8 11h6M11 8v6"></path></svg></span>
+          <h3 class="step-title">اے آئی کا جائزہ</h3>
+          <p class="step-text">ہم اسے جانی پہچانی بیماریوں سے ملاتے ہیں اور سب سے ممکنہ وجوہات فیصد کے ساتھ دکھاتے ہیں۔</p>
+        </div>
+        <div class="step-card">
+          <span class="step-number">3</span>
+          <span class="step-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 12l2 2 4-4"></path><path d="M12 3l7 3v6c0 4.5-3 8-7 9-4-1-7-4.5-7-9V6z"></path></svg></span>
+          <h3 class="step-title">اگلے قدم</h3>
+          <p class="step-text">جانیں کہ یہ کیوں ہوتا ہے، ابھی کیا کریں، آگے کیسے بچیں اور ماہر کو کب بلائیں۔</p>
+        </div>
+      </div>
+      <div class="notice notice-red">
+        <span class="notice-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 9v4M12 17h.01"></path><path d="M10.3 3.9L2 18a2 2 0 0 0 1.7 3h16.6a2 2 0 0 0 1.7-3L13.7 3.9a2 2 0 0 0-3.4 0z"></path></svg></span>
+        <p class="notice-text"><strong>تیزی سے پھیل رہا ہے؟</strong> اگر بہت سے پودے مرجھا یا مر رہے ہوں، یا بیماری چند دنوں میں پورے کھیت میں پھیل جائے، تو اسی دن اپنے مقامی محکمہ زراعت سے رابطہ کریں۔ ہماری اے آئی صرف رہنمائی دیتی ہے، تشخیص نہیں۔</p>
+      </div>
+    </section>
+
+    <!-- ================= SECTION 5: COMMON PROBLEMS ================= -->
+    <section class="container-5 section reveal">
+      <div class="section-head section-head-row">
+        <div>
+          <p class="section-label">بیماریوں کی معلومات</p>
+          <h2 class="section-title">عام بیماریاں</h2>
+        </div>
+        <a href="plants.html" class="link-arrow">فصلوں کی سب بیماریاں <svg class="icon-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"></path></svg></a>
+      </div>
+      <div class="card-grid card-grid-4">
+        <article class="disease-card" data-tags="wheat" data-kind="disease" data-search="پیلی کنگی (دھاری دار کنگی) yellow (stripe) rust گندم گندم کے پتوں پر لمبی دھاریوں میں پیلے نارنجی پاؤڈر والے دانے۔ stripe stripes lines yellow powder orange powder rust peela powder peeli kungi dhaariyan peeli peela dhari dhariyan lakeer lakeeren zang kungi پیلی کنگی کنگی دھاریاں دھاری دار لائنیں پیلا پاؤڈر نارنجی پاؤڈر پیلے دھبے گندم کی کنگی پتوں پر پیلی لکیریں ہاتھ پر پیلا رنگ لگنا زنگ">
+          <img src="../images/symptoms/stripe-rust.svg" alt="گندم کے پتے پر پیلی کنگی کی علامات کی تصویر" class="disease-card-image" loading="lazy" width="480" height="320">
+          <div class="disease-card-body">
+            <div class="disease-card-tags"><span class="tag">گندم</span><span class="tag tag-gray">پھپھوندی (فنگس)</span></div>
+            <h3 class="disease-card-title">پیلی کنگی (دھاری دار کنگی)</h3>
+            <p class="disease-card-text">گندم کے پتوں پر لمبی دھاریوں میں پیلے نارنجی پاؤڈر والے دانے۔</p>
+            <a href="diseases/wheat-yellow-rust.html" class="link-arrow" aria-label="پیلی کنگی (دھاری دار کنگی) کی تفصیل دیکھیں">تفصیل دیکھیں <svg class="icon-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"></path></svg></a>
+          </div>
+        </article>        <article class="disease-card" data-tags="tomato potato" data-kind="disease" data-search="اگیتا جھلساؤ early blight ٹماٹر اور آلو نشانے جیسے دائروں والے بھورے دھبے، جو پرانے نچلے پتوں سے شروع ہوتے ہیں۔ target rings concentric brown spots lower leaves yellow halo early blight chhalle daire dairay nishana bhoore dhabbe neeche ke patte agaiti agaita اگیتا جھلساؤ جھلساؤ نشانے جیسے دھبے دائرے گول دائرے بھورے دھبے نیچے کے پتے پیلا گھیرا پتے پیلے ہو کر گرنا ٹماٹر کے پتوں پر دھبے آلو کے پتوں پر دھبے">
+          <img src="../images/symptoms/early-blight.svg" alt="ٹماٹر کے پتے پر اگیتے جھلساؤ کی علامات کی تصویر" class="disease-card-image" loading="lazy" width="480" height="320">
+          <div class="disease-card-body">
+            <div class="disease-card-tags"><span class="tag">ٹماٹر اور آلو</span><span class="tag tag-gray">پھپھوندی (فنگس)</span></div>
+            <h3 class="disease-card-title">اگیتا جھلساؤ</h3>
+            <p class="disease-card-text">نشانے جیسے دائروں والے بھورے دھبے، جو پرانے نچلے پتوں سے شروع ہوتے ہیں۔</p>
+            <a href="diseases/tomato-early-blight.html" class="link-arrow" aria-label="اگیتا جھلساؤ کی تفصیل دیکھیں">تفصیل دیکھیں <svg class="icon-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"></path></svg></a>
+          </div>
+        </article>        <article class="disease-card" data-tags="potato tomato" data-kind="disease" data-search="پچھیتا جھلساؤ late blight آلو اور ٹماٹر بڑے، گہرے، گیلے سے لگنے والے دھبے جو ٹھنڈے اور گیلے موسم میں بہت تیزی سے پھیلتے ہیں۔ late blight dark patches wet greasy water soaked white fuzz rotting black patches fast pichheti pichheta geela geelay kale dhabbe kaale dhabbe sarr sarna jhulsao patte kaale kaale ho gaye gal gaye patte gal gaye پچھیتا جھلساؤ جھلساؤ کالے دھبے گہرے دھبے گیلے دھبے چکنے دھبے سفید روئیں پتوں کے نیچے سفیدی آلو گلنا پودے گل رہے ہیں تیزی سے پھیلنا پتے کالے ہونا پتے کالے کالے ہو کر گل گئے پتے گل گئے">
+          <img src="../images/symptoms/late-blight.svg" alt="آلو کے پتے پر پچھیتے جھلساؤ کی علامات کی تصویر" class="disease-card-image" loading="lazy" width="480" height="320">
+          <div class="disease-card-body">
+            <div class="disease-card-tags"><span class="tag">آلو اور ٹماٹر</span><span class="tag tag-gray">پانی کی پھپھوندی (اومائسیٹ)</span></div>
+            <h3 class="disease-card-title">پچھیتا جھلساؤ</h3>
+            <p class="disease-card-text">بڑے، گہرے، گیلے سے لگنے والے دھبے جو ٹھنڈے اور گیلے موسم میں بہت تیزی سے پھیلتے ہیں۔</p>
+            <a href="diseases/potato-late-blight.html" class="link-arrow" aria-label="پچھیتا جھلساؤ کی تفصیل دیکھیں">تفصیل دیکھیں <svg class="icon-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"></path></svg></a>
+          </div>
+        </article>        <article class="disease-card" data-tags="citrus" data-kind="disease" data-search="ترشاوہ پھلوں کا کینکر citrus canker ترشاوہ پھل (کینو، لیموں، گریپ فروٹ) ترشاوہ پودوں کے پتوں، ٹہنیوں اور پھل پر پیلے گھیرے والے ابھرے ہوئے، کھردرے بھورے دھبے۔ canker citrus canker kinnow kinno lemon nimbu grapefruit chakotra corky spots kanker khurdre dhabbe phal par daagh patton par dhabbe کینکر سٹرس کینکر کینو کے دھبے لیموں کے دھبے کھردرے دھبے پھل پر داغ پتوں پر دھبے چکوترا گریپ فروٹ کینو مالٹا">
+          <img src="https://images.unsplash.com/photo-1579169326371-ccb4e63f7889?auto=format&fit=crop&w=800&q=75" srcset="https://images.unsplash.com/photo-1579169326371-ccb4e63f7889?auto=format&fit=crop&w=480&q=75 480w, https://images.unsplash.com/photo-1579169326371-ccb4e63f7889?auto=format&fit=crop&w=800&q=75 800w" sizes="(max-width: 600px) 100vw, 400px" alt="درخت پر لٹکے ہوئے پکے نارنجی کینو" class="disease-card-image" width="800" height="533" loading="lazy" decoding="async">
+          <div class="disease-card-body">
+            <div class="disease-card-tags"><span class="tag">ترشاوہ پھل (کینو، لیموں، گریپ فروٹ)</span><span class="tag tag-gray">بیکٹیریا</span></div>
+            <h3 class="disease-card-title">ترشاوہ پھلوں کا کینکر</h3>
+            <p class="disease-card-text">ترشاوہ پودوں کے پتوں، ٹہنیوں اور پھل پر پیلے گھیرے والے ابھرے ہوئے، کھردرے بھورے دھبے۔</p>
+            <a href="diseases/citrus-canker.html" class="link-arrow" aria-label="ترشاوہ پھلوں کا کینکر کی تفصیل دیکھیں">تفصیل دیکھیں <svg class="icon-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"></path></svg></a>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <!-- ================= SECTION 6: LATEST GUIDES ================= -->
+    <section class="container-6 section reveal">
+      <div class="section-head section-head-row">
+        <div>
+          <p class="section-label">بلاگ سے</p>
+          <h2 class="section-title">نئی رہنمائی</h2>
+        </div>
+        <a href="blog.html" class="link-arrow">سب مضامین <svg class="icon-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"></path></svg></a>
+      </div>
+      <div class="card-grid">
+        <a href="blog/check-crop-leaves-for-disease.html" class="guide-card" data-tags="plants" data-search="فصل کے پتوں میں بیماری کی ابتدائی نشانیاں کیسے دیکھیں ہر ہفتے کھیت دیکھنے کا آسان طریقہ، پتوں پر کیا دیکھنا ہے، اور بیماری کو کھاد یا پانی کی کمی سے کیسے الگ پہچانیں۔">
+          <img src="https://images.unsplash.com/photo-1633410195091-bd66114cef5f?auto=format&fit=crop&w=800&q=75" srcset="https://images.unsplash.com/photo-1633410195091-bd66114cef5f?auto=format&fit=crop&w=480&q=75 480w, https://images.unsplash.com/photo-1633410195091-bd66114cef5f?auto=format&fit=crop&w=800&q=75 800w" sizes="(max-width: 600px) 100vw, 400px" alt="" class="guide-image" width="800" height="500" loading="lazy" decoding="async">
+          <div class="guide-body">
+            <span class="tag">فصلیں</span>
+            <h3 class="guide-title">فصل کے پتوں میں بیماری کی ابتدائی نشانیاں کیسے دیکھیں</h3>
+            <p class="guide-excerpt">ہر ہفتے کھیت دیکھنے کا آسان طریقہ، پتوں پر کیا دیکھنا ہے، اور بیماری کو کھاد یا پانی کی کمی سے کیسے الگ پہچانیں۔</p>
+            <p class="guide-meta">5 اکتوبر 2026 · 6 منٹ کا مطالعہ</p>
+          </div>
+        </a>        <a href="blog/take-a-good-photo-for-ai.html" class="guide-card" data-tags="tips" data-search="ایسی تصویر کیسے لیں جو اے آئی پڑھ سکے دن کی روشنی میں قریب سے لی گئی صاف تصویر سے نتیجہ بہت بہتر آتا ہے۔ تصویر اپ لوڈ کرنے سے پہلے یہ آسان مشورے دیکھیں۔">
+          <img src="https://images.unsplash.com/photo-1586819158505-d7f6227d19d4?auto=format&fit=crop&w=800&q=75" srcset="https://images.unsplash.com/photo-1586819158505-d7f6227d19d4?auto=format&fit=crop&w=480&q=75 480w, https://images.unsplash.com/photo-1586819158505-d7f6227d19d4?auto=format&fit=crop&w=800&q=75 800w" sizes="(max-width: 600px) 100vw, 400px" alt="" class="guide-image" width="800" height="500" loading="lazy" decoding="async">
+          <div class="guide-body">
+            <span class="tag tag-gray">مشورے</span>
+            <h3 class="guide-title">ایسی تصویر کیسے لیں جو اے آئی پڑھ سکے</h3>
+            <p class="guide-excerpt">دن کی روشنی میں قریب سے لی گئی صاف تصویر سے نتیجہ بہت بہتر آتا ہے۔ تصویر اپ لوڈ کرنے سے پہلے یہ آسان مشورے دیکھیں۔</p>
+            <p class="guide-meta">27 ستمبر 2026 · 4 منٹ کا مطالعہ</p>
+          </div>
+        </a>        <a href="blog/fungal-bacterial-viral-plant-diseases.html" class="guide-card" data-tags="plants" data-search="فنگس، بیکٹیریا یا وائرس؟ پودوں کی بیماریوں میں فرق پہچانیں ہر وجہ کا علاج الگ ہوتا ہے۔ فنگس، بیکٹیریا اور وائرس والی بیماریوں کی عام نشانیاں جانیں، اور یہ کہ وجہ جاننا کیوں ضروری ہے۔">
+          <img src="https://images.unsplash.com/photo-1609769274404-a603c8e97b68?auto=format&fit=crop&w=800&q=75" srcset="https://images.unsplash.com/photo-1609769274404-a603c8e97b68?auto=format&fit=crop&w=480&q=75 480w, https://images.unsplash.com/photo-1609769274404-a603c8e97b68?auto=format&fit=crop&w=800&q=75 800w" sizes="(max-width: 600px) 100vw, 400px" alt="" class="guide-image" width="800" height="500" loading="lazy" decoding="async">
+          <div class="guide-body">
+            <span class="tag">فصلیں</span>
+            <h3 class="guide-title">فنگس، بیکٹیریا یا وائرس؟ پودوں کی بیماریوں میں فرق پہچانیں</h3>
+            <p class="guide-excerpt">ہر وجہ کا علاج الگ ہوتا ہے۔ فنگس، بیکٹیریا اور وائرس والی بیماریوں کی عام نشانیاں جانیں، اور یہ کہ وجہ جاننا کیوں ضروری ہے۔</p>
+            <p class="guide-meta">24 ستمبر 2026 · 6 منٹ کا مطالعہ</p>
+          </div>
+        </a>
+      </div>
+    </section>
+
+    <!-- ================= SECTION 7: FAQ ================= -->
+    <section class="container-7 section faq-section reveal">
+      <div class="section-head">
+        <p class="section-label">سوالات</p>
+        <h2 class="section-title">اکثر پوچھے جانے والے سوالات</h2>
+      </div>
+      <div class="faq-list">
+        <details class="faq-item">
+          <summary class="faq-question">کیا AgriHealth AI مفت ہے؟</summary>
+          <p class="faq-answer">جی ہاں۔ آپ بغیر اکاؤنٹ بنائے اپنی فصلیں اور پودے مفت چیک کر سکتے ہیں۔ ویب سائٹ کا خرچ اشتہارات سے چلتا ہے۔</p>
+        </details>
+        <details class="faq-item">
+          <summary class="faq-question">کیا اے آئی زراعت افسر کی جگہ لے سکتی ہے؟</summary>
+          <p class="faq-answer">نہیں۔ اے آئی آپ کو جلدی ایک پہلی رائے دیتی ہے تاکہ آپ جان سکیں کہ کیا دیکھنا ہے اور کس سے پوچھنا ہے۔ سنگین، پھیلتے ہوئے یا فوری مسئلے میں ہمیشہ ماہر سے رابطہ کریں۔ ہم کبھی سپرے یا دوائی کی مقدار نہیں بتاتے۔</p>
+        </details>
+        <details class="faq-item">
+          <summary class="faq-question">کون سی فصلیں چیک ہو سکتی ہیں؟</summary>
+          <p class="faq-answer">19 فصلیں، جن میں گندم، چاول، کپاس، مکئی، گنا، سبزیاں، کینو، آم، امرود اور کھجور شامل ہیں۔ علامات کا چیک سب کے لیے کام کرتا ہے۔ تصویر کا چیک 16 فصلوں کے لیے ہے (چنے، سرسوں اور بھنڈی کے علاوہ سب)، اور مزید پودے شامل کیے جا رہے ہیں۔</p>
+        </details>
+        <details class="faq-item">
+          <summary class="faq-question">کیا آپ میری تصویریں رکھتے ہیں؟</summary>
+          <p class="faq-answer">نہیں۔ تصویریں صرف بیماری چیک کرنے کے لیے استعمال ہوتی ہیں اور محفوظ نہیں کی جاتیں۔ تفصیل کے لیے ہماری <a href="privacy.html">پرائیویسی پالیسی</a> پڑھیں۔</p>
+        </details>
+        <details class="faq-item">
+          <summary class="faq-question">کیسی تصویر سب سے بہتر کام کرتی ہے؟</summary>
+          <p class="faq-answer">دن کی روشنی میں قریب سے لی گئی صاف تصویر، جس میں پتے کا بیمار حصہ تصویر کا زیادہ تر حصہ گھیرے۔ ہماری <a href="blog/take-a-good-photo-for-ai.html">تصویر لینے کی ٹپس</a> دیکھیں۔</p>
+        </details>
+      </div>
+    </section>
+
+    <!-- ================= SECTION 8: CALL TO ACTION ================= -->
+    <section class="container-8 section reveal">
+      <div class="cta-box">
+        <img src="https://images.unsplash.com/photo-1637070773929-054cf3288cbb?auto=format&fit=crop&w=1800&q=75" srcset="https://images.unsplash.com/photo-1637070773929-054cf3288cbb?auto=format&fit=crop&w=480&q=75 480w, https://images.unsplash.com/photo-1637070773929-054cf3288cbb?auto=format&fit=crop&w=800&q=75 800w, https://images.unsplash.com/photo-1637070773929-054cf3288cbb?auto=format&fit=crop&w=1200&q=75 1200w, https://images.unsplash.com/photo-1637070773929-054cf3288cbb?auto=format&fit=crop&w=1800&q=75 1800w" sizes="(max-width: 1200px) 100vw, 1160px" alt="" class="cta-image" width="1600" height="900" loading="lazy" decoding="async">
+        <div class="cta-content">
+          <h2 class="cta-title">صحت مند کھیت، صحت مند زندگی۔</h2>
+          <p class="cta-text">مسئلہ جلدی پہچانیں، وقت پر قدم اٹھائیں اور اپنی فصل بچائیں۔ صرف ایک منٹ لگتا ہے۔</p>
+          <a href="detect.html" class="btn btn-green">ابھی شروع کریں <svg class="icon-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"></path></svg></a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- ================= FOOTER ================= -->
+  <footer class="footer">
+    <div class="footer-container">
+      <div class="footer-brand">
+        <a href="index.html" class="logo logo-white" aria-label="AgriHealth AI ہوم"><span class="logo-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 21c0-9 5-15 15-16-1 10-7 15-15 16z"></path><path d="M5 21l8-8"></path></svg></span><span class="logo-text" dir="ltr">AgriHealth <span class="logo-highlight">AI</span></span></a>
+        <p class="footer-about">پودوں کی بیماریاں جلدی پہچاننے کے لیے مفت اے آئی مدد، تاکہ فصلیں اور باغ صحت مند رہیں اور پیداوار بڑھے۔</p>
+      </div>
+
+      <div class="footer-links">
+        <div class="footer-col">
+          <h2 class="footer-title">اہم لنکس</h2>
+          <a href="index.html">ہوم</a>
+          <a href="plants.html">فصلوں کی بیماریاں</a>
+          <a href="blog/take-a-good-photo-for-ai.html">تصویر لینے کی ٹپس</a>
+          <a href="detect.html">بیماری چیک کریں</a>
+        </div>
+        <div class="footer-col">
+          <h2 class="footer-title">معلومات</h2>
+          <a href="blog.html">بلاگ اور رہنمائی</a>
+          <a href="about.html#technology">ہماری اے آئی کیسے کام کرتی ہے</a>
+          <a href="about.html">ہمارے بارے میں</a>
+          <a href="contact.html">رابطہ</a>
+        </div>
+        <div class="footer-col">
+          <h2 class="footer-title">قانونی</h2>
+          <a href="privacy.html">پرائیویسی پالیسی</a>
+          <a href="terms.html">شرائط اور اعلانِ دستبرداری</a>
+          <a href="about.html#credits">تصویروں کا کریڈٹ</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="footer-bottom">
+      <p>© 2026 AgriHealth AI۔ جملہ حقوق محفوظ ہیں۔</p>
+      <p>اے آئی کے نتائج صرف مشورہ ہیں، ویٹرنری ڈاکٹر یا زرعی ماہر کا متبادل نہیں۔</p>
+    </div>
+  </footer>
+
+  <script src="../js/main.js"></script>
+</body>
+</html>

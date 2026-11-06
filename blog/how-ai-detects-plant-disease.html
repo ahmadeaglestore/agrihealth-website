@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>How AI Detects Plant Disease from a Photo | AgriHealth AI</title>
+  <meta name="description" content="A plain-language look at the machine learning behind AgriHealth AI: how the models learn, how confident they are, and where they can go wrong.">
+  <meta name="theme-color" content="#0b3b2c">
+  <link rel="canonical" href="https://www.yourdomain.com/blog/how-ai-detects-plant-disease.html">
+  <link rel="alternate" hreflang="en" href="https://www.yourdomain.com/blog/how-ai-detects-plant-disease.html">
+  <link rel="alternate" hreflang="ur" href="https://www.yourdomain.com/ur/blog/how-ai-detects-plant-disease.html">
+  <link rel="alternate" hreflang="x-default" href="https://www.yourdomain.com/blog/how-ai-detects-plant-disease.html">
+
+  <!-- Social sharing preview -->
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="AgriHealth AI">
+  <meta property="og:locale" content="en_US">
+  <meta property="og:title" content="How AI Detects Plant Disease from a Photo | AgriHealth AI">
+  <meta property="og:description" content="A plain-language look at the machine learning behind AgriHealth AI: how the models learn, how confident they are, and where they can go wrong.">
+  <meta property="og:image" content="https://images.unsplash.com/photo-1642439994493-3816a23c997a?auto=format&fit=crop&w=1200&q=75">
+
+  <!-- Icons & app -->
+  <link rel="icon" href="../images/favicon.svg" type="image/svg+xml">
+  <link rel="icon" href="../images/icon-192.png" type="image/png" sizes="192x192">
+  <link rel="apple-touch-icon" href="../images/icon-192.png">
+  <link rel="manifest" href="../site.webmanifest">
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Nastaliq+Urdu:wght@600&text=%D8%A7%D8%B1%D8%AF%D9%88&display=swap" rel="stylesheet">
+
+  <!-- CSS -->
+  <link rel="stylesheet" href="../css/style.css">
+</head>
+<body>
+  <a href="#main" class="skip-link">Skip to content</a>
+
+  <!-- ================= HEADER ================= -->
+  <header class="header">
+    <div class="header-container">
+      <a href="../index.html" class="logo" aria-label="AgriHealth AI home"><span class="logo-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 21c0-9 5-15 15-16-1 10-7 15-15 16z"></path><path d="M5 21l8-8"></path></svg></span><span class="logo-text" dir="ltr">AgriHealth <span class="logo-highlight">AI</span></span></a>
+
+      <nav class="nav-menu" aria-label="Main menu">
+        <a href="../index.html" class="nav-link">Home</a>
+        <a href="../plants.html" class="nav-link">Plants</a>
+        <a href="../blog.html" class="nav-link active" aria-current="page">Blog</a>
+        <a href="../about.html" class="nav-link">About</a>
+        <a href="../contact.html" class="nav-link">Contact</a>
+      </nav>
+
+      <div class="header-actions">
+        <a href="../ur/blog/how-ai-detects-plant-disease.html" class="lang-btn" lang="ur" hreflang="ur" aria-label="اردو میں پڑھیں">اردو</a>
+        <button type="button" class="icon-btn search-btn" aria-label="Open search" aria-expanded="false" aria-controls="search-box"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="11" cy="11" r="7"></circle><path d="M20 20l-3.5-3.5"></path></svg></button>
+        <a href="../detect.html" class="detect-btn">Start Detection</a>
+        <button type="button" class="icon-btn menu-btn" aria-label="Open menu" aria-expanded="false" aria-controls="mobile-menu"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 7h16M4 12h16M4 17h16"></path></svg></button>
+      </div>
+    </div>
+
+    <!-- Search box -->
+    <div class="search-box" id="search-box">
+      <form class="search-form" action="../blog.html" method="get" role="search">
+        <label for="search-input" class="visually-hidden">Search diseases and guides</label>
+        <input type="search" id="search-input" name="q" class="search-input" placeholder="Search a disease or crop… e.g. rust, whitefly">
+        <button type="submit" class="search-submit">Search</button>
+      </form>
+    </div>
+  </header>
+
+  <!-- ================= MOBILE MENU ================= -->
+  <div class="menu-overlay"></div>
+  <aside class="mobile-menu" id="mobile-menu" aria-label="Mobile menu">
+    <div class="mobile-menu-top">
+      <a href="../index.html" class="logo logo-white" aria-label="AgriHealth AI home"><span class="logo-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 21c0-9 5-15 15-16-1 10-7 15-15 16z"></path><path d="M5 21l8-8"></path></svg></span><span class="logo-text" dir="ltr">AgriHealth <span class="logo-highlight">AI</span></span></a>
+      <button type="button" class="icon-btn close-btn" aria-label="Close menu"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 6l12 12M18 6L6 18"></path></svg></button>
+    </div>
+    <nav class="mobile-nav" aria-label="Mobile main menu">
+      <a href="../index.html" class="mobile-link"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 11l9-7 9 7v9a1 1 0 0 1-1 1h-5v-6h-6v6H4a1 1 0 0 1-1-1z"></path></svg>Home</a>
+      <a href="../plants.html" class="mobile-link"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 21c0-9 5-15 15-16-1 10-7 15-15 16z"></path><path d="M5 21l8-8"></path></svg>Plants</a>
+      <a href="../blog.html" class="mobile-link active"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 5a2 2 0 0 1 2-2h12v18H6a2 2 0 0 1-2-2z"></path><path d="M8 7h6M8 11h6"></path></svg>Blog</a>
+      <a href="../about.html" class="mobile-link"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"></circle><path d="M12 11v6M12 7.5v.01"></path></svg>About</a>
+      <a href="../contact.html" class="mobile-link"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="2"></rect><path d="M3 7l9 6 9-6"></path></svg>Contact</a>
+    </nav>
+    <div class="mobile-actions">
+      <p class="mobile-actions-title">Quick Actions</p>
+      <a href="../detect.html" class="mobile-btn mobile-btn-fill">Start Detection</a>
+      <a href="../blog.html" class="mobile-btn mobile-btn-outline">View Blog</a>
+      <a href="../ur/blog/how-ai-detects-plant-disease.html" class="lang-btn mobile-lang" lang="ur" hreflang="ur" aria-label="اردو میں پڑھیں">اردو</a>
+    </div>
+    <p class="mobile-copy">© 2026 AgriHealth AI</p>
+  </aside>
+
+  <main id="main">
+
+    <!-- ================= SECTION 1: ARTICLE HEADER ================= -->
+    <section class="container-1">
+      <div class="article-header">
+        <ol class="breadcrumb breadcrumb-dark" aria-label="Breadcrumb"><li><a href="../index.html">Home</a></li><li><a href="../blog.html">Blog</a></li><li aria-current="page">AI & Tips</li></ol>
+        <span class="tag tag-gray">AI & Tips</span>
+        <h1 class="article-title">How AI Detects Plant Disease from a Photo</h1>
+        <p class="article-meta">By the AgriHealth AI Team · <time datetime="2026-09-16">September 16, 2026</time> · 7 min read</p>
+      </div>
+      <img src="https://images.unsplash.com/photo-1642439994493-3816a23c997a?auto=format&fit=crop&w=1800&q=75" srcset="https://images.unsplash.com/photo-1642439994493-3816a23c997a?auto=format&fit=crop&w=480&q=75 480w, https://images.unsplash.com/photo-1642439994493-3816a23c997a?auto=format&fit=crop&w=800&q=75 800w, https://images.unsplash.com/photo-1642439994493-3816a23c997a?auto=format&fit=crop&w=1200&q=75 1200w, https://images.unsplash.com/photo-1642439994493-3816a23c997a?auto=format&fit=crop&w=1800&q=75 1800w" sizes="(max-width: 1100px) 100vw, 1100px" alt="Man in a field looking at his phone" class="article-hero-image" width="1600" height="900" fetchpriority="high" decoding="async">
+    </section>
+
+    <!-- ================= SECTION 2: ARTICLE ================= -->
+    <section class="container-2 section">
+      <div class="article-layout">
+        <article class="article-body">
+<p>AI tools that look at a photo of a leaf and name a disease can seem like magic. In reality they are built from a few well-understood machine learning ideas. Here is how the models behind AgriHealth AI work, in plain language. The photo model is live and we keep testing and improving it.</p>
+
+<h2 id="1-learning-from-examples">1. Learning from examples</h2>
+<p>The photo model is a type of neural network called a convolutional neural network (CNN). It learns by looking at thousands of labelled photos, for example many leaves with early blight, many with late blight and many healthy leaves. Over time it learns which patterns of colour, texture and shape belong to each disease.</p>
+<p>Instead of starting from zero, we use <strong>transfer learning</strong>: we start with a model that has already learned to recognise general shapes and textures from millions of everyday photos, and then train it further on plant disease images. This needs far less data and gives better results.</p>
+
+<h2 id="2-lab-photos-versus-real-fields">2. Lab photos versus real fields</h2>
+<p>Many public plant disease datasets were photographed in a lab, with one leaf on a plain background. Real farm photos are messier: different light, many leaves, soil and hands in the picture. A model trained only on lab photos can look very accurate in testing but do worse in a real field. That is why we also train and test on field photos, and we share the test results on our <a href="../about.html#technology">About page</a>.</p>
+
+<h2 id="3-is-this-even-a-leaf">3. "Is this even a leaf?"</h2>
+<p>A model trained only on diseases will always pick one of them, even for a photo of a cup of tea. So before naming a disease, a separate check decides whether the photo shows a plant at all. If it does not, we ask you for a better photo instead of guessing.</p>
+
+<h2 id="4-showing-where-the-ai-looked">4. Showing where the AI looked</h2>
+<p>We use a technique called <strong>Grad-CAM</strong> to draw a heatmap over your photo. It highlights the parts of the leaf that most influenced the model's answer. If the heatmap is on the spots, that is a good sign. If it is on the background, the answer is less trustworthy.</p>
+
+<h2 id="5-understanding-written-symptoms">5. Understanding written symptoms</h2>
+<p>When you describe a problem in your own words, a language model turns your sentence into numbers that capture its meaning (called <strong>embeddings</strong>). These are compared with the symptoms in our disease library to find the closest matches. If two diseases are close, the system asks one extra question that best separates them.</p>
+
+<h2 id="6-confidence-is-not-certainty">6. Confidence is not certainty</h2>
+<p>Every result comes with a confidence score, such as 82%. This shows how sure the model is, not a guarantee. Similar-looking diseases, poor photos and rare problems can all lead to mistakes. That is why we always show other possibilities and tell you when to contact an agriculture officer.</p>
+
+<h2 id="try-it-yourself">Try it yourself</h2>
+<p>Read our <a href="../blog/take-a-good-photo-for-ai.html">photo tips</a>, then visit the <a href="../detect.html">detection page</a>.</p>
+          <div class="article-note">
+            <div class="notice notice-green">
+        <span class="notice-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"></circle><path d="M12 11v6M12 7.5v.01"></path></svg></span>
+        <p class="notice-text">This article is general information, not professional agricultural advice. For a spreading crop problem, contact your local agriculture officer.</p>
+      </div>
+          </div>
+        </article>
+
+        <aside class="article-aside" aria-label="Article tools">
+          <nav class="aside-card" aria-label="On this page">
+            <h2 class="aside-title">On this page</h2>
+            <ol class="toc-list"><li><a href="#1-learning-from-examples">1. Learning from examples</a></li><li><a href="#2-lab-photos-versus-real-fields">2. Lab photos versus real fields</a></li><li><a href="#3-is-this-even-a-leaf">3. &quot;Is this even a leaf?&quot;</a></li><li><a href="#4-showing-where-the-ai-looked">4. Showing where the AI looked</a></li><li><a href="#5-understanding-written-symptoms">5. Understanding written symptoms</a></li><li><a href="#6-confidence-is-not-certainty">6. Confidence is not certainty</a></li><li><a href="#try-it-yourself">Try it yourself</a></li></ol>
+          </nav>
+          <div class="aside-cta">
+            <h2 class="aside-title">Check with AI</h2>
+            <p>Get a free first opinion from a photo or a description of the symptoms.</p>
+            <a href="../detect.html?type=plant" class="btn btn-green btn-full">Start Detection</a>
+          </div>
+        </aside>
+      </div>
+    </section>
+
+    <!-- ================= SECTION 3: RELATED ARTICLES ================= -->
+    <section class="container-3 section reveal">
+      <div class="section-head section-head-row">
+        <div>
+          <p class="section-label">Keep reading</p>
+          <h2 class="section-title">Related Guides</h2>
+        </div>
+        <a href="../blog.html" class="link-arrow">All guides <svg class="icon-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"></path></svg></a>
+      </div>
+      <div class="card-grid">
+        <a href="../blog/take-a-good-photo-for-ai.html" class="guide-card" data-tags="tips" data-search="how to take a photo the ai can read a sharp, close photo in daylight makes a big difference to the result. follow these simple tips before you upload.">
+          <img src="https://images.unsplash.com/photo-1586819158505-d7f6227d19d4?auto=format&fit=crop&w=800&q=75" srcset="https://images.unsplash.com/photo-1586819158505-d7f6227d19d4?auto=format&fit=crop&w=480&q=75 480w, https://images.unsplash.com/photo-1586819158505-d7f6227d19d4?auto=format&fit=crop&w=800&q=75 800w" sizes="(max-width: 600px) 100vw, 400px" alt="" class="guide-image" width="800" height="500" loading="lazy" decoding="async">
+          <div class="guide-body">
+            <span class="tag tag-gray">AI & Tips</span>
+            <h3 class="guide-title">How to Take a Photo the AI Can Read</h3>
+            <p class="guide-excerpt">A sharp, close photo in daylight makes a big difference to the result. Follow these simple tips before you upload.</p>
+            <p class="guide-meta">September 27, 2026 · 4 min read</p>
+          </div>
+        </a>        <a href="../blog/check-crop-leaves-for-disease.html" class="guide-card" data-tags="plants" data-search="how to check your crop leaves for early signs of disease a simple weekly routine for walking your field, what to look for on the leaves, and how to tell a disease from a nutrient or water problem.">
+          <img src="https://images.unsplash.com/photo-1633410195091-bd66114cef5f?auto=format&fit=crop&w=800&q=75" srcset="https://images.unsplash.com/photo-1633410195091-bd66114cef5f?auto=format&fit=crop&w=480&q=75 480w, https://images.unsplash.com/photo-1633410195091-bd66114cef5f?auto=format&fit=crop&w=800&q=75 800w" sizes="(max-width: 600px) 100vw, 400px" alt="" class="guide-image" width="800" height="500" loading="lazy" decoding="async">
+          <div class="guide-body">
+            <span class="tag">Plants</span>
+            <h3 class="guide-title">How to Check Your Crop Leaves for Early Signs of Disease</h3>
+            <p class="guide-excerpt">A simple weekly routine for walking your field, what to look for on the leaves, and how to tell a disease from a nutrient or water problem.</p>
+            <p class="guide-meta">October 5, 2026 · 6 min read</p>
+          </div>
+        </a>        <a href="../blog/fungal-bacterial-viral-plant-diseases.html" class="guide-card" data-tags="plants" data-search="fungal, bacterial or viral? telling plant diseases apart different causes need different action. learn the typical signs of fungal, bacterial and viral diseases, and why it matters which one you have.">
+          <img src="https://images.unsplash.com/photo-1609769274404-a603c8e97b68?auto=format&fit=crop&w=800&q=75" srcset="https://images.unsplash.com/photo-1609769274404-a603c8e97b68?auto=format&fit=crop&w=480&q=75 480w, https://images.unsplash.com/photo-1609769274404-a603c8e97b68?auto=format&fit=crop&w=800&q=75 800w" sizes="(max-width: 600px) 100vw, 400px" alt="" class="guide-image" width="800" height="500" loading="lazy" decoding="async">
+          <div class="guide-body">
+            <span class="tag">Plants</span>
+            <h3 class="guide-title">Fungal, Bacterial or Viral? Telling Plant Diseases Apart</h3>
+            <p class="guide-excerpt">Different causes need different action. Learn the typical signs of fungal, bacterial and viral diseases, and why it matters which one you have.</p>
+            <p class="guide-meta">September 24, 2026 · 6 min read</p>
+          </div>
+        </a>
+      </div>
+    </section>
+  </main>
+
+  <!-- ================= FOOTER ================= -->
+  <footer class="footer">
+    <div class="footer-container">
+      <div class="footer-brand">
+        <a href="../index.html" class="logo logo-white" aria-label="AgriHealth AI home"><span class="logo-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 21c0-9 5-15 15-16-1 10-7 15-15 16z"></path><path d="M5 21l8-8"></path></svg></span><span class="logo-text" dir="ltr">AgriHealth <span class="logo-highlight">AI</span></span></a>
+        <p class="footer-about">Free AI help to spot plant diseases early, for healthier crops, gardens and more productive farms.</p>
+      </div>
+
+      <div class="footer-links">
+        <div class="footer-col">
+          <h2 class="footer-title">Quick Links</h2>
+          <a href="../index.html">Home</a>
+          <a href="../plants.html">Plant Diseases</a>
+          <a href="../blog/take-a-good-photo-for-ai.html">Photo Tips</a>
+          <a href="../detect.html">Start Detection</a>
+        </div>
+        <div class="footer-col">
+          <h2 class="footer-title">Resources</h2>
+          <a href="../blog.html">Blog &amp; Guides</a>
+          <a href="../about.html#technology">How Our AI Works</a>
+          <a href="../about.html">About Us</a>
+          <a href="../contact.html">Contact</a>
+        </div>
+        <div class="footer-col">
+          <h2 class="footer-title">Legal</h2>
+          <a href="../privacy.html">Privacy Policy</a>
+          <a href="../terms.html">Terms &amp; Disclaimer</a>
+          <a href="../about.html#credits">Photo Credits</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="footer-bottom">
+      <p>© 2026 AgriHealth AI. All rights reserved.</p>
+      <p>AI results are suggestions, not a replacement for a veterinarian or agriculture expert.</p>
+    </div>
+  </footer>
+
+  <script src="../js/main.js"></script>
+</body>
+</html>

@@ -1,0 +1,260 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>AI Disease Detection | AgriHealth AI</title>
+  <meta name="description" content="Check a sick plant for free. Upload a leaf photo or describe the symptoms to see the most likely diseases and what to do next.">
+  <meta name="theme-color" content="#0b3b2c">
+  <link rel="canonical" href="https://www.yourdomain.com/detect.html">
+  <link rel="alternate" hreflang="en" href="https://www.yourdomain.com/detect.html">
+  <link rel="alternate" hreflang="ur" href="https://www.yourdomain.com/ur/detect.html">
+  <link rel="alternate" hreflang="x-default" href="https://www.yourdomain.com/detect.html">
+
+  <!-- Social sharing preview -->
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="AgriHealth AI">
+  <meta property="og:locale" content="en_US">
+  <meta property="og:title" content="AI Disease Detection | AgriHealth AI">
+  <meta property="og:description" content="Check a sick plant for free. Upload a leaf photo or describe the symptoms to see the most likely diseases and what to do next.">
+  <meta property="og:image" content="https://images.unsplash.com/photo-1466692476868-aef1dfb1e735?auto=format&fit=crop&w=1200&q=75">
+
+  <!-- Icons & app -->
+  <link rel="icon" href="images/favicon.svg" type="image/svg+xml">
+  <link rel="icon" href="images/icon-192.png" type="image/png" sizes="192x192">
+  <link rel="apple-touch-icon" href="images/icon-192.png">
+  <link rel="manifest" href="site.webmanifest">
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Nastaliq+Urdu:wght@600&text=%D8%A7%D8%B1%D8%AF%D9%88&display=swap" rel="stylesheet">
+
+  <!-- CSS -->
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <a href="#main" class="skip-link">Skip to content</a>
+
+  <!-- ================= HEADER ================= -->
+  <header class="header">
+    <div class="header-container">
+      <a href="index.html" class="logo" aria-label="AgriHealth AI home"><span class="logo-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 21c0-9 5-15 15-16-1 10-7 15-15 16z"></path><path d="M5 21l8-8"></path></svg></span><span class="logo-text" dir="ltr">AgriHealth <span class="logo-highlight">AI</span></span></a>
+
+      <nav class="nav-menu" aria-label="Main menu">
+        <a href="index.html" class="nav-link">Home</a>
+        <a href="plants.html" class="nav-link">Plants</a>
+        <a href="blog.html" class="nav-link">Blog</a>
+        <a href="about.html" class="nav-link">About</a>
+        <a href="contact.html" class="nav-link">Contact</a>
+      </nav>
+
+      <div class="header-actions">
+        <a href="ur/detect.html" class="lang-btn" lang="ur" hreflang="ur" aria-label="اردو میں پڑھیں">اردو</a>
+        <button type="button" class="icon-btn search-btn" aria-label="Open search" aria-expanded="false" aria-controls="search-box"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="11" cy="11" r="7"></circle><path d="M20 20l-3.5-3.5"></path></svg></button>
+        <a href="detect.html" class="detect-btn">Start Detection</a>
+        <button type="button" class="icon-btn menu-btn" aria-label="Open menu" aria-expanded="false" aria-controls="mobile-menu"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 7h16M4 12h16M4 17h16"></path></svg></button>
+      </div>
+    </div>
+
+    <!-- Search box -->
+    <div class="search-box" id="search-box">
+      <form class="search-form" action="blog.html" method="get" role="search">
+        <label for="search-input" class="visually-hidden">Search diseases and guides</label>
+        <input type="search" id="search-input" name="q" class="search-input" placeholder="Search a disease or crop… e.g. rust, whitefly">
+        <button type="submit" class="search-submit">Search</button>
+      </form>
+    </div>
+  </header>
+
+  <!-- ================= MOBILE MENU ================= -->
+  <div class="menu-overlay"></div>
+  <aside class="mobile-menu" id="mobile-menu" aria-label="Mobile menu">
+    <div class="mobile-menu-top">
+      <a href="index.html" class="logo logo-white" aria-label="AgriHealth AI home"><span class="logo-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 21c0-9 5-15 15-16-1 10-7 15-15 16z"></path><path d="M5 21l8-8"></path></svg></span><span class="logo-text" dir="ltr">AgriHealth <span class="logo-highlight">AI</span></span></a>
+      <button type="button" class="icon-btn close-btn" aria-label="Close menu"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 6l12 12M18 6L6 18"></path></svg></button>
+    </div>
+    <nav class="mobile-nav" aria-label="Mobile main menu">
+      <a href="index.html" class="mobile-link"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 11l9-7 9 7v9a1 1 0 0 1-1 1h-5v-6h-6v6H4a1 1 0 0 1-1-1z"></path></svg>Home</a>
+      <a href="plants.html" class="mobile-link"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 21c0-9 5-15 15-16-1 10-7 15-15 16z"></path><path d="M5 21l8-8"></path></svg>Plants</a>
+      <a href="blog.html" class="mobile-link"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 5a2 2 0 0 1 2-2h12v18H6a2 2 0 0 1-2-2z"></path><path d="M8 7h6M8 11h6"></path></svg>Blog</a>
+      <a href="about.html" class="mobile-link"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"></circle><path d="M12 11v6M12 7.5v.01"></path></svg>About</a>
+      <a href="contact.html" class="mobile-link"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="2"></rect><path d="M3 7l9 6 9-6"></path></svg>Contact</a>
+    </nav>
+    <div class="mobile-actions">
+      <p class="mobile-actions-title">Quick Actions</p>
+      <a href="detect.html" class="mobile-btn mobile-btn-fill">Start Detection</a>
+      <a href="blog.html" class="mobile-btn mobile-btn-outline">View Blog</a>
+      <a href="ur/detect.html" class="lang-btn mobile-lang" lang="ur" hreflang="ur" aria-label="اردو میں پڑھیں">اردو</a>
+    </div>
+    <p class="mobile-copy">© 2026 AgriHealth AI</p>
+  </aside>
+
+  <main id="main">
+
+    <!-- ================= SECTION 1: DETECT HERO ================= -->
+    <section class="container-1 detect-hero">
+      <div class="detect-hero-inner">
+        <ol class="breadcrumb" aria-label="Breadcrumb" style="justify-content: center"><li><a href="index.html">Home</a></li><li aria-current="page">AI Detection</li></ol>
+        <h1 class="detect-hero-title"><span>AI</span> Disease Detection</h1>
+        <p class="detect-hero-text">Upload a photo or describe the symptoms. Get the most likely causes and what to do next, in seconds.</p>
+      </div>
+    </section>
+
+    <!-- ================= SECTION 2: DETECTION TOOL ================= -->
+    <section class="container-2 section detect-section">
+      <div class="detect-layout">
+        <div>
+          <form class="detect-card" id="detect-form" novalidate>
+            <div id="detect-card">
+
+              <!-- Step 1: crop -->
+              <div class="detect-step">
+                <h2 class="detect-step-title"><span class="detect-step-num">1</span><span id="host-title">Which crop?</span></h2>
+                <div class="host-search-wrap" id="host-search-wrap">
+                  <label for="host-search" class="visually-hidden">Find your crop</label>
+                  <input type="search" id="host-search" class="form-input host-search" placeholder="Find your crop…" autocomplete="off">
+                </div>
+                <div class="host-picker" id="host-picker" role="group" aria-labelledby="host-title"></div>
+                <p class="host-legend" id="host-legend">📷 = photo check available. For other crops, use “Describe it”.</p>
+              </div>
+
+              <!-- Step 2: photo or describe -->
+              <div class="detect-step">
+                <h2 class="detect-step-title"><span class="detect-step-num">2</span>Show or tell us the problem</h2>
+                <div class="mode-switch" role="group" aria-label="How do you want to check?">
+                  <button type="button" class="mode-btn active" data-mode="photo" aria-pressed="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 8h3l2-3h6l2 3h3v11H4z"></path><circle cx="12" cy="13" r="3.5"></circle></svg>Upload a photo</button>
+                  <button type="button" class="mode-btn" data-mode="text" aria-pressed="false"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 5h16v11H9l-5 4z"></path><path d="M8 9h8M8 12h5"></path></svg>Describe it</button>
+                </div>
+
+                <!-- Photo panel -->
+                <div class="mode-panel" id="photo-panel">
+                  <div class="notice notice-amber photo-note" id="photo-note" hidden>
+                    <p class="notice-text" id="photo-note-text"></p>
+                    <button type="button" class="btn btn-dark-green btn-small" id="photo-note-btn">Describe it instead</button>
+                  </div>
+                  <label class="drop-zone" id="drop-zone" tabindex="0" for="file-input">
+                    <span class="drop-zone-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 16V4"></path><path d="M7 9l5-5 5 5"></path><path d="M4 16v3a1 1 0 0 0 1 1h14a1 1 0 0 0 1-1v-3"></path></svg></span>
+                    <span class="drop-zone-title">Drag &amp; drop your photo here or click to upload</span>
+                    <span class="drop-zone-text">JPG, PNG or WebP · up to 10 MB</span>
+                  </label>
+                  <input type="file" id="file-input" class="file-input" accept="image/jpeg,image/png,image/webp">
+
+                  <div class="preview-box" id="preview" hidden>
+                    <img id="preview-image" class="preview-image" src="images/favicon.svg" alt="Preview of your photo" width="120" height="120">
+                    <div class="preview-info">
+                      <p class="preview-name" id="preview-name"></p>
+                      <p class="preview-meta" id="preview-meta"></p>
+                      <div class="preview-actions">
+                        <button type="button" class="btn btn-outline-green btn-small" id="change-photo">Change photo</button>
+                        <button type="button" class="btn btn-outline-green btn-small" id="remove-photo">Remove</button>
+                      </div>
+                    </div>
+                  </div>
+
+                  <p class="detect-step-hint" id="photo-hint">Take a close photo of one sick leaf in daylight.</p>
+                  <div class="photo-tips">
+                    <p class="photo-tip"><strong>Get close</strong>The problem fills most of the photo</p>
+                    <p class="photo-tip"><strong>Use daylight</strong>No flash, no dark shadows</p>
+                    <p class="photo-tip"><strong>Keep it sharp</strong>Tap to focus and hold still</p>
+                  </div>
+                </div>
+
+                <!-- Describe panel -->
+                <div class="mode-panel" id="text-panel" hidden>
+                  <p class="detect-step-hint">Tap everything you can see. You can choose more than one.</p>
+                  <div class="symptom-chips" id="symptom-chips" role="group" aria-label="Symptoms"></div>
+
+                  <label for="description" class="detect-label">Describe it in your own words (optional)</label>
+                  <textarea id="description" class="form-textarea" rows="4" maxlength="1000"></textarea>
+                </div>
+
+              </div>
+
+              <p class="detect-error" id="detect-error" role="alert" hidden></p>
+
+              <div class="detect-actions">
+                <button type="submit" class="btn btn-dark-green" id="analyze-btn"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="11" cy="11" r="7"></circle><path d="M20 20l-3.5-3.5"></path><path d="M8 11h6M11 8v6"></path></svg>Analyze</button>
+                <p class="detect-privacy">Free. Photos are resized on your device and not stored. <a href="privacy.html">Privacy policy</a></p>
+              </div>
+            </div>
+          </form>
+
+          <div class="detect-card loading-card" id="loading" hidden aria-live="polite">
+            <h2 class="loading-title">Checking…</h2>
+            <ul class="loading-steps" id="loading-steps"></ul>
+          </div>
+
+          <div class="detect-card result-card" id="result" hidden aria-live="polite"></div>
+        </div>
+
+        <aside class="detect-side" aria-label="Help and recent checks">
+          <div class="aside-card">
+            <h2 class="aside-title">Your recent checks</h2>
+            <p class="recent-empty" id="recent-empty">No checks yet. Your results will appear here.</p>
+            <ul class="recent-list" id="recent-list"></ul>
+            <button type="button" class="text-btn" id="clear-recent" hidden>Clear history</button>
+            <p class="small-note" style="margin-top: 12px">Saved only in this browser. Photos are never saved.</p>
+          </div>
+          <div class="aside-card">
+            <h2 class="aside-title">How it works</h2>
+            <ul class="dot-list" style="margin-top: 14px; font-size: 15px">
+              <li>Photo checks use an image model trained on more than 100,000 leaf photos. It covers 16 crops (marked 📷); more plants are being added.</li>
+              <li>Symptom checks compare your answers with our disease guides.</li>
+              <li>Results show the most likely causes, not a diagnosis.</li>
+            </ul>
+            <a href="about.html#technology" class="link-arrow" style="margin-top: 14px; font-size: 15px">About our AI <svg class="icon-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"></path></svg></a>
+          </div>
+          <div class="notice notice-red">
+        <span class="notice-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 9v4M12 17h.01"></path><path d="M10.3 3.9L2 18a2 2 0 0 0 1.7 3h16.6a2 2 0 0 0 1.7-3L13.7 3.9a2 2 0 0 0-3.4 0z"></path></svg></span>
+        <p class="notice-text"><strong>Spreading fast?</strong> If many plants are wilting or dying, or a disease spreads across the field in a few days, contact your local agriculture office the same day. Our AI gives guidance, not a diagnosis.</p>
+      </div>
+        </aside>
+      </div>
+    </section>
+  </main>
+
+  <!-- ================= FOOTER ================= -->
+  <footer class="footer">
+    <div class="footer-container">
+      <div class="footer-brand">
+        <a href="index.html" class="logo logo-white" aria-label="AgriHealth AI home"><span class="logo-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 21c0-9 5-15 15-16-1 10-7 15-15 16z"></path><path d="M5 21l8-8"></path></svg></span><span class="logo-text" dir="ltr">AgriHealth <span class="logo-highlight">AI</span></span></a>
+        <p class="footer-about">Free AI help to spot plant diseases early, for healthier crops, gardens and more productive farms.</p>
+      </div>
+
+      <div class="footer-links">
+        <div class="footer-col">
+          <h2 class="footer-title">Quick Links</h2>
+          <a href="index.html">Home</a>
+          <a href="plants.html">Plant Diseases</a>
+          <a href="blog/take-a-good-photo-for-ai.html">Photo Tips</a>
+          <a href="detect.html">Start Detection</a>
+        </div>
+        <div class="footer-col">
+          <h2 class="footer-title">Resources</h2>
+          <a href="blog.html">Blog &amp; Guides</a>
+          <a href="about.html#technology">How Our AI Works</a>
+          <a href="about.html">About Us</a>
+          <a href="contact.html">Contact</a>
+        </div>
+        <div class="footer-col">
+          <h2 class="footer-title">Legal</h2>
+          <a href="privacy.html">Privacy Policy</a>
+          <a href="terms.html">Terms &amp; Disclaimer</a>
+          <a href="about.html#credits">Photo Credits</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="footer-bottom">
+      <p>© 2026 AgriHealth AI. All rights reserved.</p>
+      <p>AI results are suggestions, not a replacement for a veterinarian or agriculture expert.</p>
+    </div>
+  </footer>
+
+  <script src="js/data.js"></script>
+  <script src="js/detect.js"></script>
+  <script src="js/main.js"></script>
+</body>
+</html>
